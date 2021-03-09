@@ -110,8 +110,8 @@ let multiplyNum = document.getElementById("multiply")
 divideNum.addEventListener("click", function () {
 
   if (operator !== "/" && b !== null) {
-
-    operate();
+    
+    calcDisplay.textContent = operate();
 
   }
 
@@ -203,7 +203,7 @@ multiplyNum.addEventListener("click", function () {
 
   if (operator !== "x" && b !== null) {
 
-    operate();
+    calcDisplay.textContent = operate();
 
   }
 
@@ -259,6 +259,8 @@ function operate() {
     default:
       console.log("Operation has not been executed");
   }
+
+  operator = "";
   
   if (answer.toString().length <= 9) {
     return calcDisplay.textContent = answer;
@@ -274,7 +276,50 @@ function operate() {
 let percent = document.getElementById("percent");
 
 percent.addEventListener("click", function() {
-  let percentage = operate() * 100;
+
+//   if (operator === "/") {
+//   let percentage = operate() * 100;
+//   calcDisplay.textContent = percentage;
+//   operator = "";
+// } else {
+//   b = calcDisplay.textContent
+//   let addPercentage = parseFloat(a) + (parseFloat(b / 100)) ;
+//   calcDisplay.textContent = addPercentage;
+
+// }
+
+
+switch (operator) {
+  case "/":
+    let percentage = operate() * 100;
   calcDisplay.textContent = percentage;
   operator = "";
+break;
+  case "+":
+    b = calcDisplay.textContent
+  let addPercentage = a * (b / 100) ;
+  calcDisplay.textContent = parseFloat(addPercentage) + parseFloat(a);
+  operator = "";
+  
+    break;
+
+  case "-":
+    b = calcDisplay.textContent
+    let subtractPercentage = a * (b / 100);
+    calcDisplay.textContent =  parseFloat(a) - parseFloat(subtractPercentage);
+    operator = "";
+    break;
+
+  case "x":
+    b = calcDisplay.textContent
+    let multiplyPercentage = a * (b / 100);
+    calcDisplay.textContent =  parseFloat(a) - parseFloat(multiplyPercentage);
+    operator = "";
+    break;
+
+  default:
+    console.log("Percentage operation has not been executed");
+}
+
+
 });
