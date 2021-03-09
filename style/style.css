@@ -1,47 +1,85 @@
-
 body {
-    
     text-align: center;
-}
-
-#container {
-    background-color: aqua;
-    position: relative;
-    width: 400px;
-    height: 550px;
-    margin: auto;
-    margin-top: 50px;
-    text-align: center;
-    padding-top: 10px;
-    border-radius: 10px;;
     
-    
-}
-
-.btn {
-    position: relative;
-    margin-top: 500px; 
-    height: 75px;
-    width: 75px;
-    margin: 5px;
-    border-radius: 5px;
-    outline: none;
-    
-}
-
-#scr {
-    background-color: blue;
-    height: 75px;
-    position: relative;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    width: 300px;
-    padding-top: 25px;
 }
 
 h1 {
-    margin-top: 50px;
+    color: red;
+    font-family: orbitron;
+    font-weight: bold;
+    width: 206px;
+    margin: auto;
 }
+
+.display {
+    border: solid 1px rgb(179, 179, 179);
+    border-radius: 3px;
+    width: 212px;
+    height: 50px;
+    text-align: right;
+    margin: 12px auto;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 25px;
+    font-family: orbitron, 'Courier New', Courier, monospace;
+    color: rgb(0, 143, 0);
+    background-color: rgb(46, 45, 45);
+    
+}
+
+.container {
+    
+    border-radius: 5px;
+    width: 250px;
+    margin: 3% auto;
+    padding: 20px 15px;
+    background-color: rgb(139, 139, 139);
+    box-shadow: 5px 5px 5px gray;
+}
+
+.number-btn {
+    height: 40px;
+    width: 50px;
+    margin: 2px;
+    padding: 7px 5px;
+    border: solid 1px;
+    border-radius: 5px;
+    background-color: rgb(65, 63, 63);
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.point-btn {
+    height: 40px;
+    width: 50px;
+    margin: 2px;
+    padding: 7px 5px;
+    border: solid 1px;
+    border-radius: 5px;
+    background-color: rgb(65, 63, 63);
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.operation-btn {
+    height: 40px;
+    width: 50px;
+    margin: 2px;
+    padding: 7px 5px;
+    border: solid 1px;
+    border-radius: 5px;
+    background-color: rgb(65, 63, 63);
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#equals {
+    width: 104px;
+}
+
+ .number-btn:active, .operation-btn:active, .point-btn:active {
+    background-color: rgb(105, 104, 104)
+}
+
 
 
