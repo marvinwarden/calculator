@@ -37,7 +37,7 @@ function populateDisplay() {
       if (calcDisplay.textContent.length > 8) {
         let displayMaxLength = calcDisplay.textContent.substr(0, 8);
         calcDisplay.textContent = displayMaxLength;
-        
+
       };
 
       if (numbers.length === 1) {
@@ -110,7 +110,7 @@ let multiplyNum = document.getElementById("multiply")
 divideNum.addEventListener("click", function () {
 
   if (operator !== "/" && b !== null) {
-    
+
     calcDisplay.textContent = operate();
 
   }
@@ -232,7 +232,7 @@ let equal = document.getElementById("equals");
 equal.addEventListener("click", operate);
 
 function operate() {
-  
+
   b = calcDisplay.textContent;
 
   switch (operator) {
@@ -261,65 +261,54 @@ function operate() {
   }
 
   operator = "";
-  
+
   if (answer.toString().length <= 9) {
     return calcDisplay.textContent = answer;
-  } 
+  }
 
   if (answer.toString().length > 9) {
     return calcDisplay.textContent = answer.toExponential(4);
   }
- 
+
 
 };
 
 let percent = document.getElementById("percent");
 
-percent.addEventListener("click", function() {
+percent.addEventListener("click", function () {
 
-//   if (operator === "/") {
-//   let percentage = operate() * 100;
-//   calcDisplay.textContent = percentage;
-//   operator = "";
-// } else {
-//   b = calcDisplay.textContent
-//   let addPercentage = parseFloat(a) + (parseFloat(b / 100)) ;
-//   calcDisplay.textContent = addPercentage;
+  switch (operator) {
+    
+    case "/":
+      let percentage = operate() * 100;
+      calcDisplay.textContent = percentage;
+      operator = "";
+      break;
 
-// }
+    case "+":
+      b = calcDisplay.textContent
+      let addPercentage = a * (b / 100);
+      calcDisplay.textContent = parseFloat(addPercentage) + parseFloat(a);
+      operator = "";
+      break;
 
+    case "-":
+      b = calcDisplay.textContent
+      let subtractPercentage = a * (b / 100);
+      calcDisplay.textContent = parseFloat(a) - parseFloat(subtractPercentage);
+      operator = "";
+      break;
 
-switch (operator) {
-  case "/":
-    let percentage = operate() * 100;
-  calcDisplay.textContent = percentage;
-  operator = "";
-break;
-  case "+":
-    b = calcDisplay.textContent
-  let addPercentage = a * (b / 100) ;
-  calcDisplay.textContent = parseFloat(addPercentage) + parseFloat(a);
-  operator = "";
-  
-    break;
+    case "x":
+      b = calcDisplay.textContent
+      let multiplyPercentage = a * (b / 100);
+      calcDisplay.textContent = parseFloat(a) - parseFloat(multiplyPercentage);
+      operator = "";
+      break;
 
-  case "-":
-    b = calcDisplay.textContent
-    let subtractPercentage = a * (b / 100);
-    calcDisplay.textContent =  parseFloat(a) - parseFloat(subtractPercentage);
-    operator = "";
-    break;
-
-  case "x":
-    b = calcDisplay.textContent
-    let multiplyPercentage = a * (b / 100);
-    calcDisplay.textContent =  parseFloat(a) - parseFloat(multiplyPercentage);
-    operator = "";
-    break;
-
-  default:
-    console.log("Percentage operation has not been executed");
-}
+    default:
+      console.log("Percentage operation has not been executed");
+  }
 
 
 });
